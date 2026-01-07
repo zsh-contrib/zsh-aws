@@ -1,14 +1,16 @@
 #!/usr/bin/env zsh
 
-# If AWS_PROFILE is not set, try to get it from tmux
-if ! (($ + AWS_PROFILE)) && [[ -n "$TMUX" ]]; then
+# Step 1: Determine AWS_PROFILE at startup.
+# If AWS_PROFILE is unset or empty, and we're in tmux, try to get it from there.
+if [[ -z "$AWS_PROFILE" ]] && [[ -n "$TMUX" ]]; then
   TMUX_AWS_PROFILE=$(tmux show-window-options -v @AWS_PROFILE 2>/dev/null)
   if [[ -n "$TMUX_AWS_PROFILE" ]]; then
     export AWS_PROFILE=$TMUX_AWS_PROFILE
   fi
 fi
 
-# AWS vault export
-if (($ + AWS_PROFILE)); then
+# Step 2: Export credentials at startup if a profile is set.
+# Use --no-prompt to avoid hanging the shell.
+if [[ -n "$AWS_PROFILE" ]]; then
   eval "$(aws-vault export $AWS_PROFILE --format export-env)"
 fi
