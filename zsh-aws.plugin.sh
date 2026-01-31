@@ -3,7 +3,7 @@
 # Step 1: Determine AWS_PROFILE at startup.
 # If AWS_PROFILE is unset or empty, and we're in tmux, try to get it from there.
 if [[ -z "$AWS_PROFILE" ]] && [[ -n "$TMUX" ]]; then
-  TMUX_AWS_PROFILE=$(tmux show-window-options -v @AWS_PROFILE 2>/dev/null)
+  TMUX_AWS_PROFILE=$(tmux show-window-options -v @aws_profile 2>/dev/null)
   if [[ -n "$TMUX_AWS_PROFILE" ]]; then
     export AWS_PROFILE=$TMUX_AWS_PROFILE
   fi
