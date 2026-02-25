@@ -11,6 +11,6 @@ fi
 
 # Step 2: Export credentials at startup if a profile is set.
 # Use --no-prompt to avoid hanging the shell.
-if [[ -n "$AWS_PROFILE" ]]; then
+if [[ -n "$AWS_PROFILE" ]] && [[ -z "$AWS_SESSION_TOKEN" ]]; then
   eval "$(aws-vault export $AWS_PROFILE --format export-env)"
 fi
