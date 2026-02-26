@@ -1,6 +1,9 @@
 #!/usr/bin/env zsh
 
-# Step 1: Determine AWS_PROFILE at startup.
+# Step 0: Fall back to AWS_VAULT when AWS_PROFILE is unset.
+AWS_PROFILE="${AWS_PROFILE:-$AWS_VAULT}"
+
+# Step 1: Determine AWS_PROFILE from tmux if still unset.
 # If AWS_PROFILE is unset or empty, and we're in tmux, try to get it from there.
 if [[ -z "$AWS_PROFILE" ]] && [[ -n "$TMUX" ]]; then
   TMUX_AWS_PROFILE=$(tmux show-window-options -v @aws_profile 2>/dev/null)
