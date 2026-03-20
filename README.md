@@ -2,7 +2,7 @@
 
 AWS credential management for Zsh — per-window profiles in tmux, automatic export via aws-vault.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![test](https://github.com/zsh-contrib/zsh-aws/actions/workflows/test.yml/badge.svg)](https://github.com/zsh-contrib/zsh-aws/actions/workflows/test.yml)
 
 Stop re-exporting credentials every time you switch AWS accounts. `zsh-aws` hooks into aws-vault to load the right profile automatically — from `AWS_PROFILE`, `AWS_VAULT`, or a per-window tmux option — so your shell is always authenticated before you type the first command.
 
