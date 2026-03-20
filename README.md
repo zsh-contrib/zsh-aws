@@ -1,6 +1,6 @@
 # zsh-aws
 
-AWS credential management for Zsh — per-window profiles in tmux, automatic export via aws-vault.
+> AWS credential management for Zsh — per-window profiles in tmux, automatic export via aws-vault.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE) [![test](https://github.com/zsh-contrib/zsh-aws/actions/workflows/test.yml/badge.svg)](https://github.com/zsh-contrib/zsh-aws/actions/workflows/test.yml)
 
