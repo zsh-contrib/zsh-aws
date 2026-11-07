@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.1.1](https://github.com/zsh-contrib/zsh-aws/compare/v0.1.0...v0.1.1) (2026-11-07)
+
+
+### Bug Fixes
+
+* **ci:** merge with the App token so main gets its CI run ([#38](https://github.com/zsh-contrib/zsh-aws/issues/38)) ([600cb0c](https://github.com/zsh-contrib/zsh-aws/commit/600cb0c1d27cb6a50852121161fc9757fc0d0d7e))
+
 ## [0.1.0](https://github.com/zsh-contrib/zsh-aws/compare/v0.0.1...v0.1.0) (2026-05-04)
 
 
